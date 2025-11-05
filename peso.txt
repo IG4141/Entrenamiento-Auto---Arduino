@@ -1,0 +1,15 @@
+# Pesos entrenados de la red neuronal (Colab)
+# Arquitectura: [2 entradas, 3 ocultas, 4 salidas]
+# Función de activación: tanh
+# Aprendizaje supervisado - 40000 épocas - lr=0.03
+
+Pesos capa 1 (W1):
+[[0.0, 0.0, 0.0],
+ [-0.123, 2.352, -2.79],
+ [-2.153, 0.998, 0.839]]
+
+Pesos capa 2 (W2):
+[[1.275, 0.773, 1.572, 1.313],
+ [-1.265, -1.36, -1.156, -1.0],
+ [0.002, -0.446, 2.157, -2.299],
+ [2.304, -2.296, -0.427, -0.327]]
