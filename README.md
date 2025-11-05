@@ -3,8 +3,11 @@
 Integrantes:
 
 Ivo Giuliano Cappetto
+
 Martin Sanchez
+
 Nicolas Fernandez
+
 Santiago Luna
 
 Este proyecto consiste en implementar un **modelo de red neuronal** entrenado en **Python (Colab)** y luego llevarlo a un **Arduino Uno** utilizando la simulación en **Wokwi**.  
