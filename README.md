@@ -14,6 +14,42 @@ Este proyecto consiste en implementar un **modelo de red neuronal** entrenado en
 El objetivo fue que el coche (simulado) pueda tomar decisiones en función de dos entradas, sin usar condicionales `if/else`, sino a partir del aprendizaje automático.
 
 ---
+## Resumen de arquitecturas observadas
+
+El proyecto **“Programa un coche Arduino con Inteligencia Artificial”** presenta dos tipos de arquitectura:
+
+### A) Arquitectura de software (red neuronal)
+
+- Red neuronal **feedforward** con propagación hacia adelante.  
+- Compone 3 capas principales:
+  - **Capa de entrada:** 2 neuronas (distancia y dirección)  
+  - **Capa oculta:** 3 neuronas con función de activación `tanh`  
+  - **Capa de salida:** 4 neuronas (una por motor o acción)  
+- Entrenamiento **supervisado** en Python mediante **backpropagation**.  
+- Los **pesos entrenados** se exportan al Arduino para realizar la inferencia.
+
+### B) Arquitectura de hardware (Arduino)
+
+- **Sensores ultrasónicos** para medir distancia.  
+- **Servo motor** que barre de izquierda a derecha.  
+- **Módulo controlador L298N** para manejar los 4 motores.  
+- Flujo de datos: sensores → red neuronal → motores.
+
+**Conclusión:**  
+El sistema es híbrido (software + hardware), donde el aprendizaje ocurre en Python y la inferencia se ejecuta en Arduino, combinando inteligencia artificial con control embebido.
+
+---
+
+## Enfoques de resolución de problemas aplicados
+
+| Enfoque | Descripción |
+|----------|-------------|
+| **Aprendizaje supervisado** | Se definen entradas/salidas esperadas (tabla de verdad) para que la red aprenda el comportamiento del coche. |
+| **Normalización** | Escala de valores entre −1 y 1 para que la activación `tanh` funcione correctamente. |
+| **Entrenamiento iterativo** | Ajuste de pesos durante miles de épocas para minimizar el error global. |
+| **Generalización** | La red aprende patrones sin necesidad de reglas manuales `if/else`. |
+| **Despliegue embebido** | Los pesos se copian al Arduino Uno para ejecutar el modelo en tiempo real. |
+| **Escalabilidad** | Se pueden añadir más sensores o salidas reentrenando la red. |
 
 ##  1. Arquitectura observada en el proyecto
 
